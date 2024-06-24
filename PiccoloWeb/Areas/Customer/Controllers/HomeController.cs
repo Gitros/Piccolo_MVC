@@ -2,8 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Piccolo.Models;
 using System.Diagnostics;
 
-namespace PiccoloWeb.Controllers
+namespace PiccoloWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

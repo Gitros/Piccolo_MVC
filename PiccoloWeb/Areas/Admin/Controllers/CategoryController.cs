@@ -3,8 +3,9 @@ using Piccolo.DataAccess.Data;
 using Piccolo.DataAccess.Repository.IRepository;
 using Piccolo.Models;
 
-namespace PiccoloWeb.Controllers
+namespace PiccoloWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -14,7 +15,7 @@ namespace PiccoloWeb.Controllers
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList= _unitOfWork.Category.GetAll().ToList();
+            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -41,12 +42,12 @@ namespace PiccoloWeb.Controllers
 
         public IActionResult Edit(int? id)
         {
-            if(id == null || id== 0) 
-            { 
+            if (id == null || id == 0)
+            {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id == id);
-            if(categoryFromDb == null)
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }

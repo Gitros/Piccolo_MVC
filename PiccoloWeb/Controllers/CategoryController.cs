@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PiccoloWeb.Data;
-using PiccoloWeb.Models;
+using Piccolo.DataAccess.Data;
+using Piccolo.Models;
 
 namespace PiccoloWeb.Controllers
 {

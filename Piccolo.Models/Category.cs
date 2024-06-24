@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace PiccoloWeb.Models
+namespace Piccolo.Models
 {
     public class Category
     {

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using PiccoloWeb.Data;
+using Piccolo.DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

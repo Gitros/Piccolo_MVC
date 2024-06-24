@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PiccoloWeb.Models;
+using Piccolo.Models;
 
-namespace PiccoloWeb.Data
+namespace Piccolo.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

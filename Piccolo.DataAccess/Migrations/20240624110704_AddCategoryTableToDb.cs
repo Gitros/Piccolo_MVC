@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace PiccoloWeb.Migrations
+namespace Piccolo.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration

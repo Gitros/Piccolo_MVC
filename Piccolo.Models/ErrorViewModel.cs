@@ -1,4 +1,4 @@
-namespace PiccoloWeb.Models
+namespace Piccolo.Models
 {
     public class ErrorViewModel
     {

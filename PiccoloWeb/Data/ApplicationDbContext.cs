@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PiccoloWeb.Models;
 
 namespace PiccoloWeb.Data
 {
@@ -8,5 +9,7 @@ namespace PiccoloWeb.Data
         {
             
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }

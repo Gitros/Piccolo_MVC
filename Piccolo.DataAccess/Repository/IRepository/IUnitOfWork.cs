@@ -10,6 +10,7 @@ namespace Piccolo.DataAccess.Repository.IRepository
     {
         ICategoryRepository Category { get; }
         IProductRepository Product { get; }
+        IProductTypeRepository ProductType { get; }
         void Save();
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Piccolo.Models
 {
@@ -21,11 +22,13 @@ namespace Piccolo.Models
         public int PriceBig { get; set; }
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
+        [ValidateNever]
         public Category? Category { get; set; }
         [Required]
         public int Position { get; set; }
         public int ProductTypeId { get; set; }
         [ForeignKey("ProductTypeId")]
+        [ValidateNever]
         public ProductType? ProductType { get; set; }
         
     }

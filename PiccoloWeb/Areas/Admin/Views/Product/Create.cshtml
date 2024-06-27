@@ -1,4 +1,4 @@
-﻿@model Product
+﻿@model ProductVM
 
 <div class="card shadow border-0 mt-4">
     <div class="card-header bg-secondary bg-gradient ml-0 py-3">
@@ -12,19 +12,33 @@
         <form method="post" class="row">
             <div class="border p-3">
                 <div class="form-floating py-2 col-12">
-                    <input asp-for="Ingredients" class="form-control border-0 shadow" />
-                    <label asp-for="Ingredients" class="ms-2"></label>
-                    <span asp-validation-for="Ingredients" class="text-danger"></span>
+                    <input asp-for="Product.Ingredients" class="form-control border-0 shadow" />
+                    <label asp-for="Product.Ingredients" class="ms-2"></label>
+                    <span asp-validation-for="Product.Ingredients" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-2 col-12">
-                    <input asp-for="PriceSmall" class="form-control border-0 shadow" />
-                    <label asp-for="PriceSmall" class="ms-2"></label>
-                    <span asp-validation-for="PriceSmall" class="text-danger"></span>
+                    <input asp-for="Product.PriceSmall" class="form-control border-0 shadow" />
+                    <label asp-for="Product.PriceSmall" class="ms-2"></label>
+                    <span asp-validation-for="Product.PriceSmall" class="text-danger"></span>
                 </div>
                 <div class="form-floating py-2 col-12">
-                    <input asp-for="PriceBig" class="form-control border-0 shadow" />
-                    <label asp-for="PriceBig" class="ms-2"></label>
-                    <span asp-validation-for="PriceBig" class="text-danger"></span>
+                    <input asp-for="Product.PriceBig" class="form-control border-0 shadow" />
+                    <label asp-for="Product.PriceBig" class="ms-2"></label>
+                    <span asp-validation-for="Product.PriceBig" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="@Model.Product.CategoryId" asp-items="@Model.CategoryList" class="form-select border-0 shadow">
+                        <option disabled selected>--Select Category--</option>
+                    </select>
+                    <label asp-for="Product.CategoryId" class="ms-2"></label>
+                    <span asp-validation-for="Product.CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
+                    <select asp-for="@Model.Product.ProductTypeId" asp-items="@Model.ProductTypeList" class="form-select border-0 shadow">
+                        <option disabled selected>--Select Type--</option>
+                    </select>
+                    <label asp-for="Product.ProductTypeId" class="ms-2"></label>
+                    <span asp-validation-for="Product.ProductTypeId" class="text-danger"></span>
                 </div>
                 <div class="row pt-3">
                     <div class="col-6 col-md-3">

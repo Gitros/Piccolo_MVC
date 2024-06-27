@@ -12,12 +12,14 @@ namespace Piccolo.DataAccess.Repository
     {
         private ApplicationDbContext _db;
         public ICategoryRepository Category { get; private set; }
+        public IProductTypeRepository ProductType { get; private set; }
         public IProductRepository Product { get; set; }
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             Category = new CategoryRepository(_db);
             Product = new ProductRepository(_db);
+            ProductType = new ProductTypeRepository(_db);
         }
 
         public void Save()

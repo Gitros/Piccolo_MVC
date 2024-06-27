@@ -42,12 +42,12 @@ namespace PiccoloWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? ProductFromDb = _unitOfWork.Product.Get(u => u.Id == id);
-            if (ProductFromDb == null)
+            Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
+            if (productFromDb == null)
             {
                 return NotFound();
             }
-            return View(ProductFromDb);
+            return View(productFromDb);
         }
         [HttpPost]
         public IActionResult Edit(Product obj)
@@ -67,12 +67,12 @@ namespace PiccoloWeb.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            Product? ProductFromDb = _unitOfWork.Product.Get(u => u.Id == id);
-            if (ProductFromDb == null)
+            Product? productFromDb = _unitOfWork.Product.Get(u => u.Id == id);
+            if (productFromDb == null)
             {
                 return NotFound();
             }
-            return View(ProductFromDb);
+            return View(productFromDb);
         }
         [HttpPost, ActionName("Delete")]
         public IActionResult EditPOST(int? id)

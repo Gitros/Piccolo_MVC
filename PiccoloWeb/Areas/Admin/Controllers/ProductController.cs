@@ -42,6 +42,7 @@ namespace PiccoloWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(ProductVM productVM)
         {
+            // add validation for position
             if (ModelState.IsValid)
             {
                 _unitOfWork.Product.Add(productVM.Product);
@@ -116,5 +117,16 @@ namespace PiccoloWeb.Areas.Admin.Controllers
             TempData["success"] = "Product deleted successfully";
             return RedirectToAction("Index");
         }
+
+        #region API CALLS
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            List<Product> objProductList = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductType").ToList();
+            return Json(new {data = objProductList});
+        }
+
+        #endregion
     }
 }

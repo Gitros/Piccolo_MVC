@@ -12,6 +12,11 @@
         <form method="post" class="row">
             <div class="border p-3">
                 <div class="form-floating py-2 col-12">
+                    <input asp-for="Product.Position" class="form-control border-0 shadow" />
+                    <label asp-for="Product.Position" class="ms-2"></label>
+                    <span asp-validation-for="Product.Position" class="text-danger"></span>
+                </div>
+                <div class="form-floating py-2 col-12">
                     <input asp-for="Product.Ingredients" class="form-control border-0 shadow" />
                     <label asp-for="Product.Ingredients" class="ms-2"></label>
                     <span asp-validation-for="Product.Ingredients" class="text-danger"></span>
